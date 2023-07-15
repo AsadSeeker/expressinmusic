@@ -71,8 +71,8 @@
 
                             $sql = "SELECT * FROM songs 
                             WHERE (song_name LIKE :song_name or :song_name is null)
-                            AND   (artist_name  = :artist_name  or :artist_name  is null)
-                            AND   (song_genere  != :song_genere  or :song_genere  is null)";
+                            AND (artist_name LIKE :artist_name or :artist_name is null)
+                            AND (song_genere LIKE :song_genere or :song_genere is null)";
 
                             $stmt = $conn->prepare($sql);
                             $stmt->execute($parameters);
